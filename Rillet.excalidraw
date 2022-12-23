@@ -255,8 +255,8 @@
     },
     {
       "type": "text",
-      "version": 1681,
-      "versionNonce": 1012331228,
+      "version": 1686,
+      "versionNonce": 1347069916,
       "isDeleted": false,
       "id": "mYMz2anPKGEGoxRvf3d5e",
       "fillStyle": "hachure",
@@ -277,17 +277,17 @@
       ],
       "strokeSharpness": "sharp",
       "boundElements": [],
-      "updated": 1671826337924,
+      "updated": 1671826882521,
       "link": null,
       "locked": false,
       "fontSize": 16,
       "fontFamily": 1,
-      "text": "1. There is no 'state' in RAM ever.\n2. The single consumer (summer) isn't a bottleneck. It can't be more than\n    one machine ever. If we do try to run the summation in parallel, each\n    process will need to 'lock' the sum, update it, then 'free' the lock.\n    Notice that 100% of the processing occurs between the 'lock' and the\n    'free'. This means all the other processes are doing 0 compute while\n    the working process is update the sum.\n3. Fault tolerance\n    1. Counter crashes - We lose the count for that sentence.\n    2. Summer crashes - We lose the total count for that sentence.\n    3. Restarting the processes will, continue where we left off and the\n        total word count is still correct, except for the sentence we dropped.\n        \n",
+      "text": "1. There is no 'state' in RAM ever.\n2. The single consumer (summer) isn't a bottleneck. It can't be more than\n    one machine ever. If we do try to run the summation in parallel, each\n    process will need to 'lock' the sum, update it, then 'free' the lock.\n    Notice that 100% of the processing occurs between the 'lock' and the\n    'free'. This means all the other processes are doing 0 compute while\n    the working process is updating the sum.\n3. Fault tolerance\n    1. Counter crashes - We lose the count for that sentence.\n    2. Summer crashes - We lose the total count for that sentence.\n    3. Restarting the processes will continue where we left off and the\n        total word count is still correct, except for the sentence we dropped.\n        \n",
       "baseline": 276,
       "textAlign": "left",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "1. There is no 'state' in RAM ever.\n2. The single consumer (summer) isn't a bottleneck. It can't be more than\n    one machine ever. If we do try to run the summation in parallel, each\n    process will need to 'lock' the sum, update it, then 'free' the lock.\n    Notice that 100% of the processing occurs between the 'lock' and the\n    'free'. This means all the other processes are doing 0 compute while\n    the working process is update the sum.\n3. Fault tolerance\n    1. Counter crashes - We lose the count for that sentence.\n    2. Summer crashes - We lose the total count for that sentence.\n    3. Restarting the processes will, continue where we left off and the\n        total word count is still correct, except for the sentence we dropped.\n        \n"
+      "originalText": "1. There is no 'state' in RAM ever.\n2. The single consumer (summer) isn't a bottleneck. It can't be more than\n    one machine ever. If we do try to run the summation in parallel, each\n    process will need to 'lock' the sum, update it, then 'free' the lock.\n    Notice that 100% of the processing occurs between the 'lock' and the\n    'free'. This means all the other processes are doing 0 compute while\n    the working process is updating the sum.\n3. Fault tolerance\n    1. Counter crashes - We lose the count for that sentence.\n    2. Summer crashes - We lose the total count for that sentence.\n    3. Restarting the processes will continue where we left off and the\n        total word count is still correct, except for the sentence we dropped.\n        \n"
     },
     {
       "type": "text",
