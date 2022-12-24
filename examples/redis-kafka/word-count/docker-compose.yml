@@ -1,0 +1,43 @@
+version: "2"
+
+services:
+  sender:
+    image: python:3.11-alpine
+    networks:
+      - redis-kafka_default
+    volumes:
+      - "./src:/code"
+    command: >
+      sh -c "pip install -r /code/requirements.txt && \
+             python /code/helpers/sentence_sender.py kafka:9092"
+  counter:
+    image: python:3.11-alpine
+    networks:
+      - redis-kafka_default
+    volumes:
+      - "./src:/code"
+    command: >
+      sh -c "pip install -r /code/requirements.txt && \
+             python /code/components/counter.py kafka:9092"
+  summer:
+    image: python:3.11-alpine
+    networks:
+      - redis-kafka_default
+    volumes:
+      - "./src:/code"
+    command: >
+      sh -c "pip install -r /code/requirements.txt && \
+             python /code/components/summer.py kafka:9092 redis:6379"
+  receiver:
+    image: python:3.11-alpine
+    networks:
+      - redis-kafka_default
+    volumes:
+      - "./src:/code"
+    command: >
+      sh -c "pip install -r /code/requirements.txt && \
+             python /code/helpers/word_count_receiver.py kafka:9092"
+
+networks:
+  redis-kafka_default:
+    external: true
